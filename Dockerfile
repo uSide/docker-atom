@@ -1,6 +1,6 @@
 FROM golang:alpine AS build-env
-ENV ATOM_VERSION=2.0.5
-ENV ATOM_CHECKSUM=f7b064f0779987f8a607990ffdea665259fc84383aa57faf99840d181b7894b6
+ENV ATOM_VERSION=2.0.7
+ENV ATOM_CHECKSUM=bbdbff3d74744d9d6491135ca07a57d729a72b4136f364d5e0f4e74cf5a274c8
 ENV PACKAGES wget unzip curl make git libc-dev bash gcc linux-headers eudev-dev python
 WORKDIR /go/src/github.com/cosmos/gaia
 RUN apk add --no-cache $PACKAGES
