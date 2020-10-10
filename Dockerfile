@@ -1,9 +1,9 @@
 FROM golang:alpine AS build-env
-ENV ATOM_VERSION=2.0.7
-ENV ATOM_CHECKSUM=bbdbff3d74744d9d6491135ca07a57d729a72b4136f364d5e0f4e74cf5a274c8
-ENV PACKAGES wget unzip curl make git libc-dev bash gcc linux-headers eudev-dev python
+ENV ATOM_VERSION=2.0.13
+ENV ATOM_CHECKSUM=b84991a3b72ddbddb6b5a5dbf084e377db75c1766c5add48ee4469173fff2d90
+ENV PACKAGES wget unzip curl make git libc-dev bash gcc linux-headers eudev-dev python2
 WORKDIR /go/src/github.com/cosmos/gaia
-RUN apk add --no-cache $PACKAGES
+RUN apk add --update --no-cache $PACKAGES
 RUN wget https://github.com/cosmos/gaia/archive/v${ATOM_VERSION}.zip \
     && echo "${ATOM_CHECKSUM}  v${ATOM_VERSION}.zip" | sha256sum -c \
     && unzip v${ATOM_VERSION}.zip \
